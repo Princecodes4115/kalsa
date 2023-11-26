@@ -1,4 +1,3 @@
-import { home, analytics, revenue, user, apps } from "./index";
 import {
   MdOutlineSettings,
   MdOutlineHistory,
@@ -8,32 +7,37 @@ import {
   MdWorkspacesOutline,
 } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { IoHomeOutline } from "react-icons/io5";
+import { TbBrandGoogleAnalytics } from "react-icons/tb";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { GrAppsRounded } from "react-icons/gr";
 
 export const navLinks = [
   {
     id: 1,
     title: "home",
-    icons: home,
+    icons: <IoHomeOutline />,
   },
   {
     id: 2,
     title: "analytics",
-    icons: analytics,
+    icons: <TbBrandGoogleAnalytics />,
   },
   {
     id: 3,
     title: "revenue",
-    icons: revenue,
+    icons: <FaRegMoneyBillAlt />,
   },
   {
     id: 4,
     title: "crm",
-    icons: user,
+    icons: <AiOutlineUsergroupAdd />,
   },
   {
     id: 5,
     title: "Apps",
-    icons: apps,
+    icons: <GrAppsRounded />,
   },
 ];
 
@@ -97,5 +101,87 @@ export const userProfileData = [
     desc: "To-do and Daily Tasks",
     iconColor: "rgb(255, 244, 229)",
     iconBg: "rgb(254, 201, 15)",
+  },
+];
+
+export const SparklineAreaData = [
+  { x: 1, yval: 2 },
+  { x: 2, yval: 6 },
+  { x: 3, yval: 8 },
+  { x: 4, yval: 5 },
+  { x: 5, yval: 10 },
+];
+
+export const transactions = [
+  // ...
+  {
+    name: "John Doe",
+    amount: "USD 100",
+    status: "Successful",
+    date: "April 03, 2023",
+    isSuccessful: true,
+    transactionType: "incoming",
+  },
+  {
+    name: "Jane Doe",
+    amount: "USD 50",
+    status: "Pending",
+    date: "April 03, 2023",
+    isSuccessful: false,
+    isPending: true,
+    transactionType: "outgoing",
+  },
+  {
+    name: "Jane Doe",
+    amount: "USD 570",
+    status: "Failed",
+    date: "April 03, 2023",
+    isSuccessful: false,
+    isPending: false,
+    transactionType: "outgoing",
+  },
+  {
+    name: "Jane Doe",
+    amount: "USD 500",
+    status: "Successful",
+    date: "April 03, 2023",
+    isSuccessful: true,
+    isPending: false,
+    transactionType: "outgoing",
+  },
+  {
+    name: "Jane Doe",
+    amount: "USD 500",
+    status: "Successful",
+    date: "April 03, 2023",
+    isSuccessful: true,
+    isPending: false,
+    transactionType: "incoming",
+  },
+  {
+    name: "Jane Doe",
+    amount: "USD 50",
+    status: "Pending",
+    date: "April 03, 2023",
+    isSuccessful: false,
+    isPending: true,
+    transactionType: "outgoing",
+  },
+  {
+    name: "John Doe",
+    amount: "USD 100",
+    status: "Successful",
+    date: "April 03, 2023",
+    isSuccessful: true,
+    transactionType: "incoming",
+  },
+  {
+    name: "Jane Doe",
+    amount: "USD 500",
+    status: "Successful",
+    date: "April 03, 2023",
+    isSuccessful: true,
+    isPending: false,
+    transactionType: "incoming",
   },
 ];

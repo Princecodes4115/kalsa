@@ -1,14 +1,15 @@
 "use client";
-import Navbar from "./components/Navbar";
-import Revenue from "./components/Revenue";
-import Analytics from "./components/Analytics";
+import Navbar from "./parts/Navbar";
+import Revenue from "./parts/Revenue";
+import Analytics from "./parts/Analytics";
 import { useState } from "react";
+import Sidebar from "@/components/sidebar";
 
 const Page = () => {
   const [showComponent, setShowComponent] = useState("revenue");
 
   const renderContent = (component) => (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <div className={` w-full overflow-x-auto`}>
         <div className=" navbar overflow-x-auto mx-auto  ">
           <Navbar
@@ -16,20 +17,21 @@ const Page = () => {
             setShowComponent={setShowComponent}
           />
         </div>
+        <Sidebar />
       </div>
 
-      {/* Render the selected component */}
+      {/* Rendering the selected component here */}
       {component}
     </div>
   );
 
   return renderContent(
     showComponent === "home" ? (
-      <Revenue />
+      <Analytics />
     ) : showComponent === "analytics" ? (
       <Analytics />
     ) : showComponent === "revenue" ? (
-      <Analytics />
+      <Revenue />
     ) : showComponent === "crm" ? (
       <Analytics />
     ) : showComponent === "apps" ? (

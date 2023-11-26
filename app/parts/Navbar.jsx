@@ -19,14 +19,22 @@ const Navbar = ({ showComponent, setShowComponent }) => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
-  const { setActiveMenu, activeMenu, handleClick, isClicked, currentColor } =
-    useStateContext();
+  const {
+    setActiveMenu,
+    activeMenu,
+    handleClick,
+    isClicked,
+    currentColor,
+    setIsClicked,
+    initialState,
+  } = useStateContext();
+
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
     <div className="w-full">
       <nav
-        className={`w-[95%] h-[66px] mt-5 mx-auto flex py-6 px-16 max-sm:px-10 justify-between items-center fixed navbar inset-x-0 bg-white backdrop-filter backdrop-blur-xl bg-opacity-0 z-50 rounded-full shadow-xl`}
+        className={`w-[95%] h-[66px] mt-1 mx-auto flex py-6 px-16 max-sm:px-10 justify-between items-center fixed navbar inset-x-0 bg-white backdrop-filter backdrop-blur-xl bg-opacity-1 z-50 rounded-full shadow-md`}
       >
         <div className="bank__image">
           <Image src={logo} alt="kalsa" className=" h-[40px]" />
@@ -37,7 +45,9 @@ const Navbar = ({ showComponent, setShowComponent }) => {
             <li
               key={nav.id}
               onClick={() => setShowComponent(nav.title)}
-              className={`font-larsseit font-normal cursor-pointer capitalize  text-[14px] ${
+              className={` font-normal cursor-pointer  ${
+                nav.title === "crm" ? "uppercase" : "capitalize"
+              } text-[14px] ${
                 index === navLinks.length - 1 ? "mr-0" : "mr-10"
               } ${
                 showComponent === nav.title
@@ -45,13 +55,9 @@ const Navbar = ({ showComponent, setShowComponent }) => {
                   : "text-black"
               }  mr-10`}
             >
-              <div className="flex gap-1">
-                <Image
-                  src={nav.icons}
-                  alt={nav.title}
-                  className="w-[20px] h-[20px] object-contain mr-2"
-                />
-                {nav.title}
+              <div className="flex items-center gap-1">
+                {nav.icons}
+                <span>{nav.title}</span>
               </div>
             </li>
           ))}
@@ -65,7 +71,7 @@ const Navbar = ({ showComponent, setShowComponent }) => {
             icon={<MdNotificationsNone />}
           />
           <NavButton
-            title="chat"
+            title="Chat"
             customFunc={() => handleClick("chat")}
             color={currentColor}
             icon={<MdChatBubbleOutline />}
@@ -75,7 +81,7 @@ const Navbar = ({ showComponent, setShowComponent }) => {
               AJ
             </div>
             <NavButton
-              title="Notifications"
+              title="Profile"
               customFunc={() => handleClick("profile")}
               color={currentColor}
               icon={<MdOutlineFormatLineSpacing />}
@@ -112,13 +118,14 @@ const Navbar = ({ showComponent, setShowComponent }) => {
                 </li>
               ))}
             </ul>
-            <div className="no-underline items-center md:flex  font-larsseit flex bg-[#EFF1F6] rounded-full px-2 py-1 gap-1 mt-4">
+            <div className="no-underline items-center md:flex   flex bg-[#EFF1F6] rounded-full px-2 py-1 gap-1 mt-4">
               <div className="w-10 h-10 flex items-center justify-center cursor-pointer bg-[#2D3B43] text-white rounded-full font-bold text-xl">
                 AJ
               </div>
               <NavButton
                 title="Profile"
                 customFunc={() => handleClick("profile")}
+                onClick={() => console.log("is clocked !!")}
                 color={currentColor}
                 icon={<MdOutlineFormatLineSpacing />}
               />
@@ -129,7 +136,7 @@ const Navbar = ({ showComponent, setShowComponent }) => {
                 icon={<MdNotificationsNone />}
               />
               <NavButton
-                title="chat"
+                title="Chat"
                 customFunc={() => handleClick("chat")}
                 color={currentColor}
                 icon={<MdChatBubbleOutline />}
