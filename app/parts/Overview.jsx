@@ -24,7 +24,7 @@ const Overview = () => {
           </div>
         </div>
 
-        <div className="mt-5 w-full">
+        <div className="mt-3 w-full">
           <DynamicSparkLine />
         </div>
       </div>

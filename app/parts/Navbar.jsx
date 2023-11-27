@@ -14,6 +14,7 @@ import UserProfile from "./userProfile";
 import Chat from "./Chat";
 import Notification from "./Notification";
 import dynamic from "next/dynamic";
+import Apps from "./Apps";
 
 const NavButton = dynamic(() => import("./NavButton"), { ssr: false });
 
@@ -39,16 +40,21 @@ const Navbar = ({ showComponent, setShowComponent }) => {
           {navLinks.map((nav, index) => (
             <li
               key={nav.id}
-              onClick={() => setShowComponent(nav.title)}
+              onClick={() => {
+                nav.title === "Apps"
+                  ? handleClick("apps")
+                  : setShowComponent(nav.title);
+              }}
               className={` font-normal cursor-pointer  ${
                 nav.title === "crm" ? "uppercase" : "capitalize"
               } text-[14px] ${
                 index === navLinks.length - 1 ? "mr-0" : "mr-10"
               } ${
-                showComponent === nav.title
+                (showComponent === nav.title && nav.title == "Apps") ||
+                (isClicked.apps && nav.title === "Apps")
                   ? "text-white bg-black rounded-full px-6 py-2"
                   : "text-black"
-              }  mr-10`}
+              } mr-10`}
             >
               <div className="flex items-center gap-1">
                 {nav.icons}
@@ -120,7 +126,6 @@ const Navbar = ({ showComponent, setShowComponent }) => {
               <NavButton
                 title="Profile"
                 customFunc={() => handleClick("profile")}
-                onClick={() => console.log("is clocked !!")}
                 color={currentColor}
                 icon={<MdOutlineFormatLineSpacing />}
               />
@@ -143,6 +148,7 @@ const Navbar = ({ showComponent, setShowComponent }) => {
       {isClicked.chat && <Chat />}
       {isClicked.notification && <Notification />}
       {isClicked.profile && <UserProfile />}
+      {isClicked.apps && <Apps />}
     </div>
   );
 };

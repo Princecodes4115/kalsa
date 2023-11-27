@@ -41,7 +41,6 @@ class Chart extends Component {
             { x: new Date(2017, 4, 1), y: 93 },
             { x: new Date(2017, 5, 1), y: 129 },
             { x: new Date(2017, 6, 1), y: 143 },
-            { x: new Date(2017, 7, 1), y: 156 },
             { x: new Date(2017, 8, 1), y: 122 },
             { x: new Date(2017, 9, 1), y: 106 },
             { x: new Date(2017, 10, 1), y: 137 },

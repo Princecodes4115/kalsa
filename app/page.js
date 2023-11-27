@@ -35,7 +35,7 @@ const Page = () => {
     ) : showComponent === "crm" ? (
       <Analytics />
     ) : showComponent === "apps" ? (
-      <Analytics />
+      <Revenue />
     ) : (
       <Revenue />
     )

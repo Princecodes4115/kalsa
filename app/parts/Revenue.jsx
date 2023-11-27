@@ -12,9 +12,9 @@ import TransactionList from "./TransactionList";
 
 export default function Revenue() {
   return (
-    <div className="mt-32  w-full ">
-      <div className="w-full lg:w-[80%] mx-auto flex-col md:flex ">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+    <div className="mt-32 w-full md:w-[90%] mx-auto">
+      <div className="w-full lg:w-[80%] mx-auto flex-col md:flex shadow-none">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6 shadow-none">
           <Card
             className="col-span-4 shadow-none"
             style={{ border: "none", borderRadius: "0px" }}
@@ -32,7 +32,7 @@ export default function Revenue() {
             </CardContent>
           </Card>
           <Card
-            className="col-span-2"
+            className="col-span-2 shadow-none"
             style={{ border: "none", borderRadius: "0px" }}
           >
             <CardContent>

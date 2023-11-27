@@ -12,6 +12,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { GrAppsRounded } from "react-icons/gr";
+import { vector1, vector2, vector3, vector4 } from ".";
 
 export const navLinks = [
   {
@@ -183,5 +184,33 @@ export const transactions = [
     isSuccessful: true,
     isPending: false,
     transactionType: "incoming",
+  },
+];
+
+export const AppsData = [
+  {
+    image: vector1,
+    message: "Link in bio",
+    desc: "manage your link in bio",
+  },
+  {
+    image: vector2,
+    message: "Store",
+    desc: "manage your store activities",
+  },
+  {
+    image: vector4,
+    message: "Media kit",
+    desc: "manage your media kit",
+  },
+  {
+    image: vector4,
+    message: "Invoicing",
+    desc: "Manage your invoicing",
+  },
+  {
+    image: vector1,
+    message: "Booking",
+    desc: "Manage bookings",
   },
 ];
