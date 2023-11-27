@@ -14,11 +14,20 @@ import CalendarPicker from "./CalendarPicker";
 import TransactionType from "./TransactionType";
 import TransactionStatus from "./TransactionStatus";
 import { Button } from "@/components/ui/button";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function Filter() {
   return (
     <Sheet style={{}}>
-      <SheetTrigger>Filter </SheetTrigger>
+      <SheetTrigger style={{ disply: "flex" }}>
+        <span className="flex flex-row gap-2">
+          {" "}
+          Filter{" "}
+          <IoIosArrowDown
+            style={{ paddingTop: "0.2rem", fontSize: "1.2rem" }}
+          />
+        </span>
+      </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Filter</SheetTitle>

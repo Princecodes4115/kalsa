@@ -11,7 +11,7 @@ const Overview = () => {
     <div className="flex flex-wrap justify-center">
       <div className="border-r-1 border-color mx-2  w-full">
         <div className="flex flex-row flex-wrap justify-between lg:justify-start item-center ">
-          <div className="pr-4 lg:pr-40">
+          <div className="pr-4 lg:pr-20">
             <span className=" text-[20px] lg:text-[36px] font-bold">
               USD 12,5000.00
             </span>

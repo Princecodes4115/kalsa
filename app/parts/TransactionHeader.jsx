@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { FaFilter, FaDownload } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
 import Filter from "./Filter/Filter";
 
 const TransactionHeader = () => {
@@ -16,7 +15,6 @@ const TransactionHeader = () => {
       <div className="flex items-center space-x-4 text-black font-medium pt-4">
         <span className="flex items-center px-6 cursor-pointer py-4 rounded-full bg-[#EFF1F6] whitespace-nowrap">
           <Filter />
-          <IoIosArrowDown />
         </span>
         <span className="flex items-center cursor-pointer space-x-2  px-5 py-4 rounded-full bg-[#EFF1F6] whitespace-nowrap">
           <span>Export List</span>

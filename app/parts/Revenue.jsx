@@ -15,17 +15,26 @@ export default function Revenue() {
     <div className="mt-32  w-full ">
       <div className="w-full lg:w-[80%] mx-auto flex-col md:flex ">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
-          <Card className="col-span-4">
+          <Card
+            className="col-span-4 shadow-none"
+            style={{ border: "none", borderRadius: "0px" }}
+          >
             <CardHeader>
               <CardTitle className="text-gray-500 text-md">
                 Available balance
               </CardTitle>
             </CardHeader>
-            <CardContent className="pl-2">
+            <CardContent
+              className="pl-2"
+              style={{ border: "none", borderRadius: "0px" }}
+            >
               <Overview />
             </CardContent>
           </Card>
-          <Card className="col-span-2">
+          <Card
+            className="col-span-2"
+            style={{ border: "none", borderRadius: "0px" }}
+          >
             <CardContent>
               <RecentSales />
             </CardContent>

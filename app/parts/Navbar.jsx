@@ -4,7 +4,6 @@ import { logo } from "@/public/index";
 import { navLinks } from "@/public/data";
 import Image from "next/image";
 import { useStateContext } from "../context/contextProvider";
-import NavButton from "./NavButton";
 import {
   MdChatBubbleOutline,
   MdNotificationsNone,
@@ -14,20 +13,16 @@ import { IoMdCloseCircle, IoMdMenu } from "react-icons/io";
 import UserProfile from "./userProfile";
 import Chat from "./Chat";
 import Notification from "./Notification";
+import dynamic from "next/dynamic";
+
+const NavButton = dynamic(() => import("./NavButton"), { ssr: false });
 
 const Navbar = ({ showComponent, setShowComponent }) => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
-  const {
-    setActiveMenu,
-    activeMenu,
-    handleClick,
-    isClicked,
-    currentColor,
-    setIsClicked,
-    initialState,
-  } = useStateContext();
+  const { setActiveMenu, activeMenu, handleClick, isClicked, currentColor } =
+    useStateContext();
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
